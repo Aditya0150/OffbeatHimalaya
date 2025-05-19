@@ -9,7 +9,7 @@ const tours = [
   { name: "Kuari Pass", price: "₹9,000", altitude: "4,265 m", image: "Kuari Pass.png", description: "A short trek with stunning panoramic views." },
   { name: "Kedarkantha", price: "₹7,000", altitude: "3,800 m", image: "Kedarkantha.jpg", description: "A winter trek perfect for beginners." },
   { name: "Roopkund", price: "₹25,000", altitude: "3,892 m", image: "Roopkund.jpg", description: "A high-altitude Himalayan trek famous for its glacial lake and ancient human skeletons.." },
-  { name: "Dronagiri Base Camp Trek", price: "₹15,000", altitude: "4,200 m", image: "Dronagiri.jpg", description: "A remote and scenic trek to the base of Dronagiri peak, full of alpine beauty and legends." },
+  { name: "Dronagiri Base Camp Trek", price: "₹15,000", altitude: "4,200 m", image: "Dronagiri.JPG", description: "A remote and scenic trek to the base of Dronagiri peak, full of alpine beauty and legends." },
   { name: "Satopanth", price: "₹18,000", altitude: "4,600 m", image: "Satopanth.jpeg", description: "A high-altitude spiritual trek to the sacred Satopanth Lake near Badrinath." },
   { name: "Kagbhusandi", price: "₹16,500", altitude: "4,600 m", image: "Kagbhusandi.jpg", description: "A less-traveled mystical trek offering stunning alpine lakes and birdwatching opportunities." }
 ];
