@@ -3,7 +3,7 @@ import { useNavigate } from "react-router-dom";
 import "../styles/Tour.css";
 
 const tours = [
-  { name: "Gaumukh Tapovan", price: "₹10,999", altitude: "3,583 m", image: "Kedarnath-Yatra.jpg", description: "A beautiful trek through the Himalayan ranges." },
+  { name: "Kedarnath", price: "₹10,999", altitude: "3,583 m", image: "Kedarnath-Yatra.jpg", description: "A beautiful trek through the Himalayan ranges." },
   { name: "Valley of Flowers", price: "₹9,999", altitude: "3,658 m", image: "Valley of Flower.png", description: "A trek amidst a valley full of blooming flowers." },
   { name: "Har Ki Dun", price: "₹13,000", altitude: "3,566 m", image: "Har Ki Dun.png", description: "Explore the scenic Valley of Gods." },
   { name: "Kuari Pass", price: "₹9,000", altitude: "4,265 m", image: "Kuari Pass.png", description: "A short trek with stunning panoramic views." },
