@@ -28,7 +28,6 @@ const Tours = () => {
               <h3>{tour.name}</h3>
               <p className="tour-description">{tour.description}</p>
               <p className="tour-altitude"><strong>Altitude:</strong> {tour.altitude}</p>
-              <p className="tour-price"><strong>Price:</strong> {tour.price}</p>
               <button className="book-now" onClick={() => navigate("/contact")}>Book Now</button>
             </div>
           </div>
