@@ -11,7 +11,7 @@ const tours = [
   { name: "Har Ki Dun", altitude: "3,566 m", image: "Har Ki Dun.png", description: "Explore the scenic Valley of Gods." },
   { name: "Kuari Pass", altitude: "4,265 m", image: "Kuari Pass.png", description: "A short trek with stunning panoramic views." },
   { name: "Kedarkantha", altitude: "3,800 m", image: "Kedarkantha.jpg", description: "A winter trek perfect for beginners." },
-  { name: "Roopkund", altitude: "3,892 m", image: "Roopkund.jpg", description: "A high-altitude Himalayan trek famous for its glacial lake and ancient human skeletons.." },
+  { name: "Roopkund", altitude: "3,892 m", image: "Roopkund.jpg", description: "A high-altitude Himalayan trek famous for its glacial lake and ancient human skeletons.." }
 ];
 
 const Tours = () => {
