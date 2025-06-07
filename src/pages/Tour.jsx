@@ -5,7 +5,7 @@ import "../styles/Tour.css";
 const tours = [
    { name: "Dronagiri Base Camp Trek", altitude: "4,200 m", image: "Dronagiri.JPG", description: "A remote and scenic trek to the base of Dronagiri peak, full of alpine beauty and legends." },
   { name: "Satopanth", altitude: "4,600 m", image: "Satopanth.jpeg", description: "A high-altitude spiritual trek to the sacred Satopanth Lake near Badrinath." },
-  { name: "Kagbhusandi", altitude: "4,600 m", image: "Kagbhusandi.jpg", description: "A less-traveled mystical trek offering stunning alpine lakes and birdwatching opportunities." }
+  { name: "Kagbhusandi", altitude: "4,600 m", image: "Kagbhusandi.jpg", description: "A less-traveled mystical trek offering stunning alpine lakes and birdwatching opportunities." },
   { name: "Kedarnath", altitude: "3,583 m", image: "Kedarnath-Yatra.jpg", description: "A beautiful trek through the Himalayan ranges." },
   { name: "Valley of Flowers", altitude: "3,658 m", image: "Valley of Flower.png", description: "A trek amidst a valley full of blooming flowers." },
   { name: "Har Ki Dun", altitude: "3,566 m", image: "Har Ki Dun.png", description: "Explore the scenic Valley of Gods." },
