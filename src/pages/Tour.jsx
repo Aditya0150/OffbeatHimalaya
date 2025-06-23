@@ -26,7 +26,7 @@ const Tours = () => {
      
       <video
         className="tours-video"
-        src="/assets/DSC_7865.MOV"  
+        src="/assets/DSC_7865.mp4"  
         autoPlay
         loop
         muted
