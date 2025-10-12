@@ -1,0 +1,124 @@
+import { Button } from "@/components/ui/button";
+import { Card, CardContent, CardFooter } from "@/components/ui/card";
+import { Badge } from "@/components/ui/badge";
+import { motion } from "framer-motion";
+import { MapPin, Clock, TrendingUp, Users } from "lucide-react";
+import { AspectRatio } from "@/components/ui/aspect-ratio";
+import type { CSSProperties } from "react";
+
+export interface Trek {
+  _id: string;
+  name: string;
+  image: string;
+  difficulty: string;
+  price: number;
+  location: string;
+  duration: string;
+  altitude: string;
+  description: string;
+  highlights: string[];
+  _creationTime: number;
+}
+
+interface TrekCardProps {
+  trek: Trek;
+  onBook: (trek: Trek) => void;
+  className?: string;
+  style?: CSSProperties;
+}
+
+export default function TrekCard({ trek, onBook, className, style }: TrekCardProps) {
+  const getDifficultyColor = (difficulty: string) => {
+    switch (difficulty.toLowerCase()) {
+      case 'easy':
+        return 'bg-green-500';
+      case 'moderate':
+        return 'bg-yellow-500';
+      case 'challenging':
+        return 'bg-red-500';
+      default:
+        return 'bg-gray-500';
+    }
+  };
+
+  return (
+    <motion.div
+      whileHover={{ y: -5 }}
+      transition={{ duration: 0.3 }}
+      className={["h-full", className].filter(Boolean).join(" ")}
+      style={style}
+    >
+      <Card className="overflow-hidden bg-white/90 backdrop-blur-sm border-0 shadow-xl h-full flex flex-col">
+        <div className="relative">
+          <AspectRatio ratio={16 / 9} className="overflow-hidden rounded-none">
+            <img
+              src={trek.image}
+              alt={trek.name}
+              loading="lazy"
+              decoding="async"
+              className="h-full w-full object-cover"
+            />
+          </AspectRatio>
+          <div className="absolute top-4 left-4">
+            <Badge className={`${getDifficultyColor(trek.difficulty)} text-white text-xs px-2 py-0.5`}>
+              {trek.difficulty}
+            </Badge>
+          </div>
+          <div className="absolute top-4 right-4">
+            <Badge variant="secondary" className="bg-black/70 text-white text-xs px-2 py-0.5">
+              ₹{trek.price.toLocaleString()}
+            </Badge>
+          </div>
+        </div>
+
+        <CardContent className="p-4 md:p-5 flex-grow">
+          <h3 className="text-base sm:text-lg font-bold text-gray-900 mb-2">{trek.name}</h3>
+
+          <div className="flex items-center gap-3 md:gap-4 text-xs sm:text-sm text-gray-600 mb-3">
+            <div className="flex items-center gap-1">
+              <MapPin className="h-4 w-4" />
+              <span>{trek.location}</span>
+            </div>
+            <div className="flex items-center gap-1">
+              <Clock className="h-4 w-4" />
+              <span>{trek.duration}</span>
+            </div>
+          </div>
+
+          <div className="flex items-center gap-2 mb-3">
+            <TrendingUp className="h-4 w-4 text-orange-500" />
+            <span className="text-xs sm:text-sm font-medium text-gray-700">Altitude: {trek.altitude}</span>
+          </div>
+
+          <p className="text-gray-700 text-sm md:text-base mb-4 line-clamp-2">
+            {trek.description}
+          </p>
+
+          <div className="flex flex-wrap gap-1.5 mb-4">
+            {trek.highlights.slice(0, 2).map((highlight: string, index: number) => (
+              <Badge key={index} variant="outline" className="text-xs">
+                {highlight}
+              </Badge>
+            ))}
+          </div>
+        </CardContent>
+
+        <CardFooter className="p-4 md:p-5 pt-0">
+          <div className="grid grid-cols-1 sm:grid-cols-2 gap-2.5 md:gap-3 w-full">
+            <Button
+              size="sm"
+              onClick={() => onBook(trek)}
+              className="w-full bg-gradient-to-r from-orange-500 to-red-600 hover:from-orange-600 hover:to-red-700 text-white px-4 py-2"
+            >
+              <Users className="mr-2 h-4 w-4" />
+              Book Now
+            </Button>
+            <Button variant="outline" size="sm" className="w-full" asChild>
+              <a href={`/treks/${trek._id}/itinerary`}>Show Itinerary</a>
+            </Button>
+          </div>
+        </CardFooter>
+      </Card>
+    </motion.div>
+  );
+}

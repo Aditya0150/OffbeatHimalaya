@@ -1,0 +1,3 @@
+- [x] Ensure TrekCard.tsx map callback parameters are explicitly typed as (highlight: string, index: number)
+- [x] Run TypeScript check (tsc --noEmit) to verify the error is resolved
+- [x] No additional errors found

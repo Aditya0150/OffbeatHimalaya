@@ -1,0 +1,193 @@
+import { Button } from "@/components/ui/button";
+import { motion } from "framer-motion";
+import { Menu, X } from "lucide-react";
+import { useEffect, useState, useRef } from "react";
+import { useNavigate, useLocation } from "react-router-dom";
+
+export default function Navbar() {
+  const navigate = useNavigate();
+  const location = useLocation();
+  const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const [isVisible, setIsVisible] = useState(true);
+  const lastScrollY = useRef(0);
+
+  // Smooth scroll to section function
+  const scrollToSection = (sectionId: string) => {
+    const element = document.querySelector(sectionId);
+    if (element) {
+      element.scrollIntoView({
+        behavior: 'smooth',
+        block: 'start'
+      });
+    }
+    setIsMenuOpen(false); // Close mobile menu after navigation
+  };
+
+  // Close menu on escape and lock body scroll when menu is open
+  useEffect(() => {
+    const onKeyDown = (e: KeyboardEvent) => {
+      if (e.key === "Escape") setIsMenuOpen(false);
+    };
+    window.addEventListener("keydown", onKeyDown);
+
+    // lock body scroll when menu open
+    document.body.classList.toggle("overflow-hidden", isMenuOpen);
+
+    return () => {
+      window.removeEventListener("keydown", onKeyDown);
+      document.body.classList.remove("overflow-hidden");
+    };
+  }, [isMenuOpen]);
+
+  // Handle navbar visibility on scroll
+  useEffect(() => {
+    const handleScroll = () => {
+      const currentScrollY = window.scrollY;
+      if (currentScrollY > lastScrollY.current && currentScrollY > 100) {
+        setIsVisible(false); // Hide on scroll down
+      } else {
+        setIsVisible(true); // Show on scroll up
+      }
+      lastScrollY.current = currentScrollY;
+    };
+
+    window.addEventListener("scroll", handleScroll);
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
+
+  return (
+    <motion.nav
+      initial={{ y: -100 }}
+      animate={{ y: 0 }}
+      className={`fixed top-0 left-0 right-0 z-50 bg-transparent transition-transform duration-300 ${
+        isVisible ? 'translate-y-0' : '-translate-y-full'
+      }`}
+    >
+      <div className="w-full px-4">
+        <div className="flex items-center justify-between h-20 sm:h-24 px-4">
+          {/* Logo */}
+          <motion.div
+            whileHover={{ scale: 1.05 }}
+            className="cursor-pointer z-10 flex-shrink-0"
+            onClick={() => navigate("/")}
+          >
+            <img
+              src="/logo.png"
+              alt="Off Beat Himalaya Logo"
+              className="h-16 w-16 sm:h-20 sm:w-20 lg:h-24 lg:w-24 object-contain drop-shadow-[0_4px_12px_rgba(0,0,0,0.5)]"
+            />
+          </motion.div>
+
+          {/* Desktop Navigation */}
+          <div className="hidden md:flex items-center gap-2">
+            <button
+              className="px-4 py-2 rounded-full bg-white/90 text-gray-900 border border-black/10 hover:bg-white shadow-sm transition-colors duration-200"
+              onClick={() => navigate('/')}
+            >
+              Home
+            </button>
+            <button
+              className="px-4 py-2 rounded-full bg-white/90 text-gray-900 border border-black/10 hover:bg-white shadow-sm transition-colors duration-200"
+              onClick={() => {
+                if (location.pathname === '/') {
+                  scrollToSection('#treks');
+                } else {
+                  navigate('/');
+                  setTimeout(() => scrollToSection('#treks'), 500);
+                }
+              }}
+            >
+              Treks
+            </button>
+            <button
+              className="px-4 py-2 rounded-full bg-white/90 text-gray-900 border border-black/10 hover:bg-white shadow-sm transition-colors duration-200"
+              onClick={() => navigate('/about')}
+            >
+              About
+            </button>
+            <button
+              className="px-4 py-2 rounded-full bg-white/90 text-gray-900 border border-black/10 hover:bg-white shadow-sm transition-colors duration-200"
+              onClick={() => {
+                if (location.pathname === '/') {
+                  scrollToSection('#contact');
+                } else {
+                  navigate('/');
+                  setTimeout(() => scrollToSection('#contact'), 500);
+                }
+              }}
+            >
+              Contact
+            </button>
+          </div>
+
+          {/* Mobile menu button */}
+          <div className="md:hidden flex-shrink-0">
+            <Button
+              variant="ghost"
+              size="icon"
+              onClick={() => setIsMenuOpen(!isMenuOpen)}
+              className="text-white hover:bg-white/10"
+              aria-expanded={isMenuOpen}
+              aria-controls="mobile-menu"
+              aria-label={isMenuOpen ? "Close menu" : "Open menu"}
+            >
+              {isMenuOpen ? <X className="h-6 w-6" /> : <Menu className="h-6 w-6" />}
+            </Button>
+          </div>
+        </div>
+
+        {/* Mobile Navigation */}
+        {isMenuOpen && (
+          <motion.div
+            initial={{ opacity: 0, height: 0 }}
+            animate={{ opacity: 1, height: "auto" }}
+            exit={{ opacity: 0, height: 0 }}
+            className="md:hidden bg-black/50 backdrop-blur-md rounded-lg mt-2 p-4"
+            id="mobile-menu"
+          >
+            <div className="flex flex-col space-y-3">
+              <button
+                className="px-4 py-2 rounded-full bg-white/90 text-gray-900 border border-black/10 hover:bg-white shadow-sm transition-colors duration-200 text-left"
+                onClick={() => navigate('/')}
+              >
+                Home
+              </button>
+              <button
+                className="px-4 py-2 rounded-full bg-white/90 text-gray-900 border border-black/10 hover:bg-white shadow-sm transition-colors duration-200 text-left"
+                onClick={() => {
+                  if (location.pathname === '/') {
+                    scrollToSection('#treks');
+                  } else {
+                    navigate('/');
+                    setTimeout(() => scrollToSection('#treks'), 500);
+                  }
+                }}
+              >
+                Treks
+              </button>
+              <button
+              className="px-4 py-2 rounded-full bg-white/90 text-gray-900 border border-black/10 hover:bg-white shadow-sm transition-colors duration-200 text-left"
+              onClick={() => navigate('/about')}
+            >
+              About
+            </button>
+              <button
+                className="px-4 py-2 rounded-full bg-white/90 text-gray-900 border border-black/10 hover:bg-white shadow-sm transition-colors duration-200 text-left"
+                onClick={() => {
+                  if (location.pathname === '/') {
+                    scrollToSection('#contact');
+                  } else {
+                    navigate('/');
+                    setTimeout(() => scrollToSection('#contact'), 500);
+                  }
+                }}
+              >
+                Contact
+              </button>
+            </div>
+          </motion.div>
+        )}
+      </div>
+    </motion.nav>
+  );
+}
