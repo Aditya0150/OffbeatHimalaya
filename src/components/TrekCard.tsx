@@ -114,7 +114,10 @@ export default function TrekCard({ trek, onBook, className, style }: TrekCardPro
               Book Now
             </Button>
             <Button variant="outline" size="sm" className="w-full" asChild>
-              <a href={`/treks/${trek._id}/itinerary`}>Show Itinerary</a>
+              <a href={`/treks/${trek._id}/itinerary`} onClick={(e) => {
+                e.preventDefault();
+                window.location.href = `/treks/${trek._id}/itinerary`;
+              }}>Show Itinerary</a>
             </Button>
           </div>
         </CardFooter>
