@@ -1,6 +1,6 @@
 "use client";
 
-import { Link } from "react-router";
+import { Link } from "react-router-dom";
 import React from "react";
 
 import { cn } from "@/lib/utils";

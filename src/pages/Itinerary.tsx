@@ -1,7 +1,7 @@
 import { Button } from "@/components/ui/button";
 import { motion } from "framer-motion";
 import { ArrowLeft, MapPin, Route, Clock, Home, TreePine, Mountain } from "lucide-react";
-import { useNavigate, useParams } from "react-router";
+import { useNavigate, useParams } from "react-router-dom";
 import { useState } from "react";
 import BookingDialog from "@/components/BookingDialog";
 import ItineraryHeader from "@/components/itinerary/ItineraryHeader";
