@@ -69,7 +69,14 @@ export default function Navbar() {
           <motion.div
             whileHover={{ scale: 1.05 }}
             className="cursor-pointer z-10 flex-shrink-0"
-            onClick={() => navigate("/")}
+            onClick={() => {
+              if (location.pathname === '/') {
+                window.scrollTo({ top: 0, behavior: 'smooth' });
+              } else {
+                navigate('/');
+                setTimeout(() => window.scrollTo({ top: 0, behavior: 'smooth' }), 500);
+              }
+            }}
           >
             <img
               src="/logo.png"
@@ -82,7 +89,14 @@ export default function Navbar() {
           <div className="hidden md:flex items-center gap-2">
             <button
               className="px-4 py-2 rounded-full bg-white/90 text-gray-900 border border-black/10 hover:bg-white shadow-sm transition-colors duration-200"
-              onClick={() => navigate('/')}
+              onClick={() => {
+                if (location.pathname === '/') {
+                  window.scrollTo({ top: 0, behavior: 'smooth' });
+                } else {
+                  navigate('/');
+                  setTimeout(() => window.scrollTo({ top: 0, behavior: 'smooth' }), 500);
+                }
+              }}
             >
               Home
             </button>
@@ -148,7 +162,14 @@ export default function Navbar() {
             <div className="flex flex-col space-y-3">
               <button
                 className="px-4 py-2 rounded-full bg-white/90 text-gray-900 border border-black/10 hover:bg-white shadow-sm transition-colors duration-200 text-left"
-                onClick={() => navigate('/')}
+                onClick={() => {
+                  if (location.pathname === '/') {
+                    window.scrollTo({ top: 0, behavior: 'smooth' });
+                  } else {
+                    navigate('/');
+                    setTimeout(() => window.scrollTo({ top: 0, behavior: 'smooth' }), 500);
+                  }
+                }}
               >
                 Home
               </button>

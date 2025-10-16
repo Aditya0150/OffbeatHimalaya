@@ -1,3 +1,5 @@
-- [x] Ensure TrekCard.tsx map callback parameters are explicitly typed as (highlight: string, index: number)
-- [x] Run TypeScript check (tsc --noEmit) to verify the error is resolved
-- [x] No additional errors found
+# TODO: Update Home Button Navigation
+
+- [x] Update desktop Home button onClick handler to navigate to top of webpage
+- [x] Update mobile Home button onClick handler to navigate to top of webpage
+- [x] Update logo onClick handler to navigate to top of home page
