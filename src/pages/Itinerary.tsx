@@ -499,6 +499,89 @@ export default function ItineraryPage() {
     },
   ];
 
+  // Add: Rich itinerary for Hampta Pass & Chandratal (5 days)
+  const richHamptaPassData = [
+    {
+      day: 1,
+      title: "Manali to Chika",
+      subtitle: "Trek Begins",
+      details: [
+        { icon: <Route className="h-4 w-4 text-orange-600" />, label: "Drive", value: "Manali to Jobara" },
+        { icon: <Clock className="h-4 w-4 text-orange-600" />, label: "Trek Duration", value: "2–3 hours" },
+        { icon: <Home className="h-4 w-4 text-orange-600" />, label: "Stay", value: "Chikka Campsite" },
+      ],
+      bullets: [
+        "Drive from Manali to Jobara trailhead",
+        "Trek through woodland and cross two wooden bridges",
+        "Camp by the riverbed with stunning waterfall and granite boulders",
+      ],
+    },
+    {
+      day: 2,
+      title: "Chika to Balu Ka Ghera",
+      subtitle: "Into the Meadows",
+      details: [
+        { icon: <Mountain className="h-4 w-4 text-orange-600" />, label: "Trek", value: "~3 hours" },
+        { icon: <TreePine className="h-4 w-4 text-orange-600" />, label: "Views", value: "Dhauladhar Ranges" },
+        { icon: <Home className="h-4 w-4 text-orange-600" />, label: "Stay", value: "Balu Ka Ghera Camp" },
+      ],
+      bullets: [
+        "Climb rock boulders along Hamta River",
+        "Cross water streams en route",
+        "First views of snow-capped Himalayan peaks",
+        "Stroll through flowery meadows and valleys",
+      ],
+    },
+    {
+      day: 3,
+      title: "Balu Ka Ghera to Sheagoru via Hampta Pass",
+      subtitle: "Pass Crossing Day",
+      details: [
+        { icon: <Mountain className="h-4 w-4 text-orange-600" />, label: "Pass Altitude", value: "14,100 ft" },
+        { icon: <Route className="h-4 w-4 text-orange-600" />, label: "Route", value: "Kullu → Lahaul Valley" },
+        { icon: <Home className="h-4 w-4 text-orange-600" />, label: "Stay", value: "Sheagoru Camp" },
+      ],
+      bullets: [
+        "Cross the stunning Hampta Pass at 14,100 ft",
+        "Dramatic landscape change from green valleys to cold desert",
+        "Descend into the Lahaul Valley",
+        "Camp at Sheagoru — the most scenic campsite on the trek",
+      ],
+    },
+    {
+      day: 4,
+      title: "Sheagoru to Chatru → Chandratal & Back",
+      subtitle: "Lake Day",
+      details: [
+        { icon: <Mountain className="h-4 w-4 text-orange-600" />, label: "Trek to Chatru", value: "~3 hours" },
+        { icon: <MapPin className="h-4 w-4 text-orange-600" />, label: "Chandratal", value: "14,100 ft" },
+        { icon: <Home className="h-4 w-4 text-orange-600" />, label: "Stay", value: "Chatru Camp" },
+      ],
+      bullets: [
+        "Trek down through Hampta Valley to Chatru",
+        "Views of majestic Pir Panjal mountains",
+        "Drive to the mesmerizing Chandratal Lake",
+        "Crystal-clear waters that change hues with the season",
+        "Return to Chatru for dinner and overnight stay",
+      ],
+    },
+    {
+      day: 5,
+      title: "Chatru to Manali",
+      subtitle: "Journey Ends",
+      details: [
+        { icon: <Route className="h-4 w-4 text-orange-600" />, label: "Route", value: "Via Atal Tunnel" },
+        { icon: <Clock className="h-4 w-4 text-orange-600" />, label: "Arrival", value: "By 1:00 PM" },
+      ],
+      bullets: [
+        "Drive back to Manali via the Atal Tunnel",
+        "Arrive by afternoon, check in to hotel",
+        "Explore mall road in the evening",
+        "Bid farewell to the mountains with unforgettable memories",
+      ],
+    },
+  ];
+
   // Determine if we should use a rich itinerary and select the correct data
   const useRich =
     trekData?.name === "Valley of Flowers" ||
@@ -506,7 +589,8 @@ export default function ItineraryPage() {
     trekData?.name === "Har Ki Dun" ||
     trekData?.name === "Kuari Pass" ||
     trekData?.name === "Roopkund Trek" ||
-    trekData?.name === "Auli and Niti Winter Expedition";
+    trekData?.name === "Auli and Niti Winter Expedition" ||
+    trekData?.name === "Hampta Pass & Chandratal";
 
   const richData =
     trekData?.name === "Kedarkantha"
@@ -519,6 +603,8 @@ export default function ItineraryPage() {
       ? richRoopkundData
       : trekData?.name === "Auli and Niti Winter Expedition"
       ? richAuliNitiData
+      : trekData?.name === "Hampta Pass & Chandratal"
+      ? richHamptaPassData
       : richItineraryData;
 
   if (!trekData) {

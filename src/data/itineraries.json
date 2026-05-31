@@ -203,5 +203,35 @@
         "description": "Return drive to Rishikesh. Memories of an unforgettable Himalayan trek."
       }
     ]
+  },
+  {
+    "trekName": "Hampta Pass & Chandratal",
+    "days": [
+      {
+        "dayNumber": 1,
+        "title": "Manali to Chika",
+        "description": "Drive to Jobara, then trek 2-3 hours through woodland and across wooden bridges to Chikka campsite by the riverbed with stunning waterfall views."
+      },
+      {
+        "dayNumber": 2,
+        "title": "Chika to Balu Ka Ghera",
+        "description": "Trek along the Hamta River, cross water streams, and walk through flowery meadows with views of snow-capped Dhauladhar ranges."
+      },
+      {
+        "dayNumber": 3,
+        "title": "Balu Ka Ghera to Sheagoru via Hampta Pass",
+        "description": "Cross Hampta Pass (14,100 ft) with ever-changing Himalayan scenery. Descend into the Lahaul Valley to the picturesque Sheagoru campsite."
+      },
+      {
+        "dayNumber": 4,
+        "title": "Sheagoru to Chatru, Chandratal & Back",
+        "description": "Trek to Chatru through Hampta Valley with views of Pir Panjal mountains. Drive to Chandratal Lake (14,000 ft) and return to Chatru for overnight stay."
+      },
+      {
+        "dayNumber": 5,
+        "title": "Chatru to Manali",
+        "description": "Drive back to Manali via the Atal Tunnel. Arrive by afternoon. Explore mall road and bid farewell to the mountains."
+      }
+    ]
   }
 ]

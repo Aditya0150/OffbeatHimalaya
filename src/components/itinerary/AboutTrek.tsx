@@ -34,13 +34,13 @@ export default function AboutTrek({ trek }: { trek: Trek }) {
           </div>
 
           <div className="rounded-2xl overflow-hidden border">
-            <AspectRatio ratio={16 / 9}>
+            <AspectRatio ratio={4 / 3}>
               <img
                 src={trek.image}
                 alt={trek.name}
                 loading="lazy"
                 decoding="async"
-                className="h-full w-full object-cover"
+                className="h-full w-full object-cover object-top"
               />
             </AspectRatio>
           </div>

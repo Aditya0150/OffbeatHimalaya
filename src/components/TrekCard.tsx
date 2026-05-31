@@ -50,13 +50,13 @@ export default function TrekCard({ trek, onBook, className, style }: TrekCardPro
     >
       <Card className="overflow-hidden bg-white/90 backdrop-blur-sm border-0 shadow-xl h-full flex flex-col">
         <div className="relative">
-          <AspectRatio ratio={16 / 9} className="overflow-hidden rounded-none">
+          <AspectRatio ratio={4 / 3} className="overflow-hidden rounded-none">
             <img
               src={trek.image}
               alt={trek.name}
               loading="lazy"
               decoding="async"
-              className="h-full w-full object-cover"
+              className="h-full w-full object-cover object-top"
             />
           </AspectRatio>
           <div className="absolute top-4 left-4">

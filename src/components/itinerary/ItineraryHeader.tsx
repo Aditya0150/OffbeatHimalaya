@@ -2,12 +2,12 @@ import { AspectRatio } from "@/components/ui/aspect-ratio";
 import { Mountain, Calendar, IndianRupee } from "lucide-react";
 import { Trek } from "../TrekCard";
 
-export default function ItineraryHeader({ trek }: { trek: Trek }) {
+export default function ItineraryHeader({ trek }: { trek: Trek & { headerImage?: string } }) {
   return (
     <div className="relative overflow-hidden rounded-2xl border bg-white">
       <AspectRatio ratio={16 / 9} className="relative">
         <img
-          src={trek.image}
+          src={trek.headerImage || trek.image}
           alt={trek.name}
           loading="lazy"
           decoding="async"

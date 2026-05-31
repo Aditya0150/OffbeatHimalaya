@@ -70,5 +70,18 @@
     "featured": true,
     "location": "Uttarakhand, India",
     "highlights": ["UNESCO World Heritage Site", "Alpine Flowers", "Himalayan Views", "Photography Paradise"]
+  },
+  {
+    "name": "Hampta Pass & Chandratal",
+    "description": "The Hampta Pass with Chandratal Trek is a stunning journey that begins in Manali's lush Kullu Valley and crosses into the arid Spiti Valley. The trail leads through meadows, dense oak and alpine forests, river crossings, and high-altitude campsites before culminating at Hampta Pass (14,100 ft). The trek concludes with a visit to the mesmerizing Chandratal Lake, a high-altitude gem with crystal-clear waters that change hues with the seasons. This diverse landscape transition from green valleys to cold deserts makes it one of the most rewarding Himalayan treks.",
+    "altitude": "4,270 m",
+    "duration": "5 days",
+    "difficulty": "Easy to Moderate",
+    "price": 7500,
+    "image": "/Hampta Pass Card.png",
+    "headerImage": "/Hampta Pass.png",
+    "featured": true,
+    "location": "Himachal Pradesh, India",
+    "highlights": ["Hampta Pass (14,100 ft)", "Chandratal Lake", "Kullu to Spiti Transition", "River Crossings", "Alpine Meadows", "Scenic Camping"]
   }
 ]
